@@ -7,8 +7,6 @@ class User {
        this.tag = `${username}#${discriminator}`;
        this.email = email;
        const client = clientFunction()
-       if (client) this.displayAvatarURL = client.users.get(this.id) ? client.users.get(this.id).displayAvatarURL : this.avatarURL;
-       else this.displayAvatarURL = this.avatarURL
        this.displayAvatarURL = client ? (client.users.get(this.id) ? client.users.get(this.id).displayAvatarURL : this.avatarURL) : this.avatarURL;
     }
     sizeAvatar(size){
